@@ -180,37 +180,6 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# ---------------------------------------------------------------------------
-# Stage 1 raw source data (task S1-DATA)
-#
-# The ABS DataPack, ASGS boundary archives, Mesh Block counts and the Pet
-# Census report total ~427 MB, and MB_2021_AUST_SHP_GDA2020.zip alone exceeds
-# GitHub's 100 MB per-file hard limit. They are immutable public downloads, so
-# they are reproduced rather than versioned: every official URL, filename, byte
-# size and retrieval date is recorded in
-# data/pipeline/stage1/source_inventory.json, and
-# scripts/build_stage1_source_inventory.py re-fetches and re-verifies them.
-data/raw/abs/*
-data/raw/pet_census/*
-!data/raw/abs/.gitkeep
-!data/raw/pet_census/.gitkeep
 
-# Extracted/unzipped working copies of the archives above.
-data/raw/abs/**/
-data/interim/
-
-# The small S1-DATA inventories ARE tracked on purpose - they are the
-# reproducibility record for the raw data and are only a few hundred KB.
-!data/pipeline/stage1/source_inventory.json
-!data/pipeline/stage1/abs_column_inventory.csv
-
-
-# Generated Google Maps page for the Stage 1 top-50 demand cells. Excluded
-# because the build injects a GOOGLE_MAPS_API_KEY into it and data/outputs/ is
-# tracked. The reusable, key-free artefacts alongside it
-# (stage1_top50_demand.geojson, stage1_top50_hex_coordinates.csv) stay in git.
-data/outputs/maps/stage1_top50_google.html
-
-# Full-grid Google Maps page: contains GOOGLE_MAPS_API_KEY and ~4 MB of
-# inlined GeoJSON. Regenerate with scripts/build_demand_map.py.
-data/outputs/maps/stage1_demand_full_google.html
+# Ignore Graphene
+.graphene/*
