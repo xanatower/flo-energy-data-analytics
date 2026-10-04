@@ -18,7 +18,7 @@ def calculate_clearing_price(
     if period_data.empty:
         raise ValueError("Offer stack is empty.")
     # Prevent invalid demand
-    if demand < 0:
+    if demand <= 0:
         raise ValueError("Demand must be greater than zero.")
     # prevent 
     if not period_data[
