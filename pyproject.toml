@@ -1,0 +1,16 @@
+[project]
+name = "flo-energy-data-analytics"
+version = "0.0.1"
+description = "Pricing and Revenue Assurance Data Analyst Job Take Home Assessment"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
